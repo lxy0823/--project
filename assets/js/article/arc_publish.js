@@ -74,6 +74,8 @@ $('.layui-form').submit(function (e) {
             // 5. 将文件对象，存储到 fd 中
             fd.append('cover_img', blob)
             // 6. 发起 ajax 数据请求
+            publishArticle(fd)
+
         })
 })
 
@@ -88,7 +90,7 @@ const publishArticle = fd => {
             const { status, message } = res
             layer.msg(message)
             if (status !== 0) return
-            // location.href = '/article/art_list.html'
+            location.href = '/article/art_list.html'
         }
     })
 }
